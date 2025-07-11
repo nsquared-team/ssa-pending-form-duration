@@ -2,7 +2,7 @@
 /**
  * Plugin Name: SSA Customization - Pending Form Duration
  * Plugin URI:  https://simplyscheduleappointments.com
- * Description: Adjust pending_form duration (to allow for slow responses from Paypal)
+ * Description: Adjust pending_form duration (to allow for slow responses from Gravity Forms or Formidable Forms)
  * Version:     1.0.0
  * Author:      Simply Schedule Appointments
  * Author URI:  https://simplyscheduleappointments.com
@@ -19,7 +19,7 @@
  */
 
 /**
- * Copyright (c) 2019 Simply Schedule Appointments (email : support@simplyscheduleappointments.com)
+ * Copyright (c) 2025 Simply Schedule Appointments (email : support@ssaplugin.com)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2 or, at
@@ -38,7 +38,8 @@
 
 add_filter( 'ssa/forms/pending_form_duration', 'ssa_customize_forms_pending_form_duration', 10, 3 );
 function ssa_customize_forms_pending_form_duration( $duration_in_seconds, $appointment_id, $data ) {
-	// appointments will stay in "pending_form" status for $duration_in_seconds before transitioning to "abandoned" (and becoming available for other customers to book)
+	// appointments will stay in "pending_form" status for $duration_in_seconds before 
+	// transitioning to "abandoned" (and becoming available for other customers to book)
 	
 	return 10 * MINUTE_IN_SECONDS; // 10 minute duration
 
